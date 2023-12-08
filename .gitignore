@@ -1,5 +1,9 @@
 /venv
 
-main.py
+/static/closing_price_100ma_200ma_chart.png
+/static/closing_price_100ma_chart.png
+/static/closing_price_chart.png
+/static/daily_returns_chart.png
+/static/prediction_vs_original_chart.png
 
 __pycache__
