@@ -16,6 +16,14 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
+@app.route('/video-call')
+def video_call():
+    return render_template('video_calling.html')
+
+@app.route('/room')
+def room():
+    return render_template('room.html')
+
 @app.route('/predict', methods=['POST'])
 def predict():
     user_input = request.form['ticker']
