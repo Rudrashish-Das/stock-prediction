@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+</head>
+<body>
+    <h1>Prediction Results</h1>
+    <p>Stock Ticker: {{ user_input }}</p>
+    
+    <h2>Closing price vs Time chart</h2>
+    <img src="{{ url_for('static', filename='closing_price_chart.png') }}" alt="Closing Price vs Time Chart">
+
+    <h2>Closing price vs Time chart with 100MA</h2>
+    <img src="{{ url_for('static', filename='closing_price_100ma_chart.png') }}" alt="Closing Price vs Time Chart with 100MA">
+
+    <h2>Closing price vs Time chart with 100MA & 200MA</h2>
+    <img src="{{ url_for('static', filename='closing_price_100ma_200ma_chart.png') }}" alt="Closing Price vs Time Chart with 100MA & 200MA">
+
+    <h2>Daily Returns</h2>
+    <img src="{{ url_for('static', filename='daily_returns_chart.png') }}" alt="Daily Returns Chart">
+
+    <h2>Prediction vs Original</h2>
+    <img src="{{ url_for('static', filename='prediction_vs_original_chart.png') }}" alt="Prediction vs Original Chart">
+    
+    <a href="/">Go back to home</a>
+</body>
+</html>
