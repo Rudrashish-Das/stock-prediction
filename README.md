@@ -30,16 +30,16 @@ tip: Look for the (venv) tag, eg.
 
 # Install Packages
 ```
-pip install -r requirements.txt
+(venv)$ pip install -r requirements.txt
 ```
 
 # Run the app
 
 If 
 ```
-python3 app.py
+(venv)$ python3 app.py
 ```
 doesn't work, use 
 ```
-python -m flask run
+(venv)$ python -m flask run
 ```
