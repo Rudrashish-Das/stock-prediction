@@ -4,5 +4,5 @@ python3 app.py
 ```
 doesn't work, use 
 ```
-python -m flask run'
+python -m flask run
 ```
