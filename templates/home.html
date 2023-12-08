@@ -1,19 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+    <link rel="stylesheet" href="/static/styles/frontpage.css">
     <title>Stock Trend Prediction</title>
 </head>
-<body>
-    <h1>Stock Trend Prediction</h1>
-    <form action="/predict" method="post">
-        <label for="ticker">Enter Stock Ticker:</label>
-        <input type="text" id="ticker" name="ticker" value="AAPL">
-        <input type="submit" value="Submit">
-    </form>
 
-    <a href="/video-call">Go to Video Call</a>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="#about">About</a>
+            <a href="#learnings">Learnings</a>
+            <a href="/video-call">Video Call Expert</a>
+        </div>
+        <h1>Stock Trend Prediction</h1>
+    </header>
+
+    <main class="wrapper">
+        <div class="container">
+            <section>
+                <h2>Enter Stock Ticker</h2>
+                <form action="/predict" method="post">
+                    <label for="ticker">Stock Ticker:</label>
+                    <input type="text" id="ticker" name="ticker" value="AAPL">
+                    <button type="submit">Predict</button>
+                </form>
+            </section>
+    
+            <section class="content">
+                <h2>Latest Trends</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor,
+                    dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+    
+                <h2>Featured Analysis</h2>
+                <p>Proin velit. Praesent nonummy mi in odio. Pellentesque habitant morbi tristique senectus et netus et
+                    malesuada fames ac turpis egestas.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Stock Trend Prediction App</p>
+    </footer>
+
+    <!-- Chatbot Button -->
+    <div class="chatbot-button" onclick="toggleChatbot()">
+        <div class="chatbot-icon">&#x1F5E3;</div>
+    </div>
+
+    <!-- Chatbot Pop-up -->
+    <div class="chatbot-popup" id="chatbotPopup">
+        <h3>Welcome to the Chatbot</h3>
+        <p>This is a sample chatbot popup content. You can add more text, forms, or any other elements as needed.</p>
+        <button onclick="toggleChatbot()">Close</button>
+    </div>
+
+
+    <script>
+        function toggleChatbot() {
+            var chatbotPopup = document.getElementById('chatbotPopup');
+            chatbotPopup.classList.toggle('show');
+        }
+    </script>
 </body>
+
+</html>
+</body>
+
 </html>

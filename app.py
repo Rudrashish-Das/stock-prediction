@@ -45,10 +45,10 @@ def predict():
     daily_returns_chart = visualize_daily_returns(df)
 
     # Load Model
-    model = tf.keras.models.load_model('apple_tf')
+    model = tf.keras.models.load_model('models/apple_tf')
 
-    data_training = pd.DataFrame(df['Close'][0:int(len(df)*0.5)])
-    data_testing = pd.DataFrame(df['Close'][int(len(df)*0.5): int(len(df))])
+    data_training = pd.DataFrame(df['Close'][0:int(len(df)*0.6)])
+    data_testing = pd.DataFrame(df['Close'][int(len(df)*0.6): int(len(df))])
 
     scaler = MinMaxScaler(feature_range=(0, 1))
 

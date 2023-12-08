@@ -30,7 +30,7 @@ tip: Look for the (venv) tag, eg.
 
 # Install Packages
 ```
-pip install -r requirements.txt
+pip install -r requirments.txt
 ```
 
 # Run the app
