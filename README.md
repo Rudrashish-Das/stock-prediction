@@ -33,6 +33,10 @@ tip: Look for the (venv) tag, eg.
 pip install -r requirments.txt
 ```
 
+# Extract Models
+
+Extract the *.zip* files and put them in the */models* directory
+
 # Run the app
 
 If 
