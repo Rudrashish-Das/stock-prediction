@@ -1,6 +1,6 @@
 /venv
+/models/apple_tf
 
-<<<<<<< HEAD
 /static/closing_price_100ma_200ma_chart.png
 /static/closing_price_100ma_chart.png
 /static/closing_price_chart.png
@@ -8,6 +8,3 @@
 /static/prediction_vs_original_chart.png
 
 __pycache__
-=======
-__pycache__
->>>>>>> cf1ae30ba300c3a82308c190941d6cc051c2a762
