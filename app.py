@@ -2,6 +2,8 @@ import matplotlib
 matplotlib.use('Agg')  # Set the backend before importing pyplot
 
 from flask import Flask, render_template, request
+from flask import send_from_directory
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -45,14 +47,14 @@ def predict():
     # Load Model
     model = tf.keras.models.load_model('apple_tf')
 
-    data_training = pd.DataFrame(df['Close'][0:int(len(df)*0.70)])
-    data_testing = pd.DataFrame(df['Close'][int(len(df)*0.70): int(len(df))])
+    data_training = pd.DataFrame(df['Close'][0:int(len(df)*0.5)])
+    data_testing = pd.DataFrame(df['Close'][int(len(df)*0.5): int(len(df))])
 
     scaler = MinMaxScaler(feature_range=(0, 1))
 
-    data_training_array = scaler.fit_transform(data_training)
+    # data_training_array = scaler.fit_transform(data_training)
     past_100_days = data_training.tail(100)
-    final_df = pd.concat([past_100_days, data_testing], ignore_index=True)
+    final_df = pd.concat([past_100_days,data_testing], ignore_index=True)
     input_data = scaler.fit_transform(final_df)
 
     x_test = []
@@ -70,9 +72,10 @@ def predict():
 
     y_predicted = y_predicted * scale_factor
     y_test = y_test * scale_factor
+    past_100_days = past_100_days * scale_factor
 
     # Final Prediction
-    prediction_vs_original_chart = visualize_prediction_vs_original(y_test, y_predicted)
+    prediction_vs_original_chart = visualize_prediction_vs_original(y_test, y_predicted, past_100_days)
 
     return render_template(
         'prediction.html',
@@ -84,6 +87,10 @@ def predict():
         daily_returns_chart=daily_returns_chart,
         prediction_vs_original_chart=prediction_vs_original_chart
     )
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('static', 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 def visualize_closing_price(df):
     fig, ax = plt.subplots(figsize=(12, 6))
@@ -128,8 +135,9 @@ def visualize_daily_returns(df):
     plt.close(fig)
     return chart_path
 
-def visualize_prediction_vs_original(y_test, y_predicted):
+def visualize_prediction_vs_original(y_test, y_predicted, past_100_days):
     fig, ax = plt.subplots(figsize=(12, 6))
+    # ax.plot(past_100_days, 'g', label='Past 100 Days')
     ax.plot(y_test, 'b', label='Original Price')
     ax.plot(y_predicted, 'r', label='Predicted Price')
     ax.set_xlabel('Time')
