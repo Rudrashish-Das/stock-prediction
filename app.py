@@ -28,13 +28,16 @@ def room():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    user_input = request.form['ticker']
+    try:
+        user_input = request.form['ticker']
 
-    end = datetime.now()
-    start = datetime(end.year - 10, end.month, end.day)
+        end = datetime.now()
+        start = datetime(end.year - 10, end.month, end.day)
 
-    df = yf.download(user_input, start, end)
-
+        df = yf.download(user_input, start, end)
+    except:
+        print("An exception occurred.")
+        return render_template('home.html')
     # Describe data
     data_description = df.describe()
 

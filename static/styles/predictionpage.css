@@ -8,10 +8,14 @@ body {
     /* Midnight Blue */
     color: #ecf0f1;
     /* Light Gray */
-    margin: 40px;
+    /* margin: 40px; */
     /* Increased margin for more space */
-    padding: 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+    box-sizing: border-box;
+
+    background-color: #1a1a1a;
+    color: #fff;
 }
 
 .container {
@@ -22,7 +26,7 @@ body {
 
 h1,
 h2 {
-    color: #3f81c2;
+    /* color: #3f81c2; */
     /* Updated heading color to #3f81c2 */
     margin: 0;
     text-align: center;
@@ -45,7 +49,7 @@ p {
 .stock-ticker {
     font-size: 24px;
     /* Increased font size */
-    color: #3498db;
+    /* color: #3498db; */
     /* Dodger Blue */
     margin-bottom: 20px;
 }

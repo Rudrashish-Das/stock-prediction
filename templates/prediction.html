@@ -11,7 +11,7 @@
 <body>
     <h1>Prediction Results</h1>
     <!-- <p class="stock-ticker">Stock Ticker: {{ user_input }}</p> -->
-    <p style="font-size: 24px; color: #3498db; margin-bottom: 20px;">Stock Ticker: {{ user_input }}</p>
+    <p style="font-size: 24px; color: #3498db; margin-bottom: 20px; text-align: center;">Stock Ticker: {{ user_input }}</p>
 
     <h2>Closing price vs Time chart</h2>
     <img src="{{ url_for('static', filename='closing_price_chart.png') }}" alt="Closing Price vs Time Chart">
