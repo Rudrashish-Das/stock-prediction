@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
+
+    min-height: 100vh;
 }
 
 header {
@@ -41,7 +45,7 @@ main {
     margin: 20px 20px 0 20px;
 }
 
-.wrapper{
+.wrapper {
     height: 100vh;
 }
 
@@ -104,6 +108,8 @@ footer {
     padding: 10px;
     background-color: #333;
     color: #fff;
+
+
 }
 
 .chatbot-popup {

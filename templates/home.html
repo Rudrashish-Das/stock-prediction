@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='static/frontpage.css') }}"> -->
     <link rel="stylesheet" href="/static/styles/frontpage.css">
     <title>Stock Trend Prediction</title>
 </head>
@@ -20,27 +21,25 @@
         <h1>Stock Trend Prediction</h1>
     </header>
 
-    <main class="wrapper">
-        <div class="container">
-            <section>
-                <h2>Enter Stock Ticker</h2>
-                <form action="/predict" method="post">
-                    <label for="ticker">Stock Ticker:</label>
-                    <input type="text" id="ticker" name="ticker" value="AAPL">
-                    <button type="submit">Predict</button>
-                </form>
-            </section>
-    
-            <section class="content">
-                <h2>Latest Trends</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor,
-                    dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
-    
-                <h2>Featured Analysis</h2>
-                <p>Proin velit. Praesent nonummy mi in odio. Pellentesque habitant morbi tristique senectus et netus et
-                    malesuada fames ac turpis egestas.</p>
-            </section>
-        </div>
+    <main class="container">
+        <section>
+            <h2>Enter Stock Ticker</h2>
+            <form action="/predict" method="post">
+                <label for="ticker">Stock Ticker:</label>
+                <input type="text" id="ticker" name="ticker" placeholder="e.g. AAPL, TSLA, SBIN.NS">
+                <button type="submit">Predict</button>
+            </form>
+        </section>
+
+        <section class="content">
+            <h2>Latest Trends</h2>
+            Stay informed about the latest trends in the stock market to make well-informed investment decisions.</p>
+
+            <h2>Expert Video Calls</h2>
+            <p>Connect with our experienced financial analysts for personalized analysis and insights through expert
+                video calls.
+                Gain valuable advice to optimize your investment strategy and navigate the market confidently.
+        </section>
     </main>
 
     <footer>
